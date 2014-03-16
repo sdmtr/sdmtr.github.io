@@ -29,7 +29,7 @@ function ReplayManager() {
   this.replayDOMFasterButton = document.querySelector(".replay .controls .button.faster");
   this.replayDOMSlowerButton = document.querySelector(".replay .controls .button.slower");
   this.replayDOMReplayButton = document.querySelector(".replay-button");
- 
+
   this.replayDOMPlayButton.addEventListener("click", this.runReplay.bind(this));
   this.replayDOMPlayButton.addEventListener("touchend", this.runReplay.bind(this));
   this.replayDOMPauseButton.addEventListener("click", this.pauseReplay.bind(this));
@@ -38,11 +38,14 @@ function ReplayManager() {
   this.replayDOMStopButton.addEventListener("touchend", this.stopReplay.bind(this));
   this.replayDOMReplayButton.addEventListener("click", this.runReplay.bind(this));
   this.replayDOMReplayButton.addEventListener("touchend", this.runReplay.bind(this));
-
   this.replayDOMFasterButton.addEventListener("click", this.setSpeed.bind(this, 100));
   this.replayDOMFasterButton.addEventListener("touchend", this.setSpeed.bind(this, 100));
   this.replayDOMSlowerButton.addEventListener("click", this.setSpeed.bind(this, -100));
   this.replayDOMSlowerButton.addEventListener("touchend", this.setSpeed.bind(this, -100));
+
+  this.replayDOMContainer.addEventListener("click", function() {
+    this.select();
+  });
 }
 
 ReplayManager.prototype.emit = function (event, data) {
