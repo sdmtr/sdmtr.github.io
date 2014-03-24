@@ -163,7 +163,7 @@ ReplayManager.prototype.pauseReplay = function() {
 
 ReplayManager.prototype.setSpeed = function(amt) {
   this.replaySpeed += amt;
-  if (this.replaySpeed < 100) this.replaySpeed = 100;
+  if (this.replaySpeed < 0) this.replaySpeed = 0;
   this.replayDOMCurrentSpeed.innerHTML = this.replaySpeed;
   if (this.replaying) this.initTimer();
 }
